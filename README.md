@@ -4,9 +4,9 @@
 
 * Map the flow of data through a web application
 * Implement CRUD in an MVC application
-* Build a pure JavaScript application
+* Build a pure JavaScript Front-End
 * Change the DOM based on events
-* Use AJAX actions to change views based on asynchronous data 
+* Use AJAX actions to change views based on asynchronous data
 
 ## Summary
 
