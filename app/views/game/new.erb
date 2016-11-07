@@ -1,0 +1,30 @@
+<form method="post" action="/game">
+  <div class="form-group row">
+    <label for="example-text-input" class="col-xs-2 col-form-label">Player 1</label>
+    <div class="col-xs-10">
+      <input class="form-control" type="text" name="player1" placeholder="Username" id="example-text-input">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="example-text-input" class="col-xs-2 col-form-label">Player 2</label>
+    <div class="col-xs-10">
+      <input class="form-control" type="text" name="player2" placeholder="Username" id="example-text-input">
+    </div>
+  </div>
+
+   <div class="form-group row">
+    <label for="example-text-input" class="col-xs-2 col-form-label">Name Game</label>
+    <div class="col-xs-10">
+      <input class="form-control" type="text" name="name" placeholder="What's the name of this game?" id="example-text-input">
+    </div>
+  </div>
+
+    <input type="submit" value="Start game" id="comment-button">
+</form>
+
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>

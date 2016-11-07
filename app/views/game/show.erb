@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+  <script src="application.js"></script>
+    <title>Racing!</title>
+  </head>
+
+  <body>
+
+  <h1> JS Ruby Racerrrr </h1>
+  <h3>Game Rules: </h3>
+  <ul>
+  <% binding.pry %>
+    <li><%= @game.players[0].username %> advances using the up arrow key</li>
+    <li><%= @game.players[1].username %> advances using the up arrow key</li>
+  </ul>
+    <table class="racer_table">
+      <tr id="player1_strip">
+      <th scope= "row"><h2><%= @game.players[0].username %></h2></th>
+        <td class="active1"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="player2_strip">
+      <th scope= "row"><h2><%= @game.players[1].username %></h2></th>
+        <td class="active2"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+  </body>
+
+</html>
