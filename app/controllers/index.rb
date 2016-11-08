@@ -1,3 +1,4 @@
 get '/' do
-  erb :'game/new'
+  @games = Game.all
+  erb :'game/index'
 end

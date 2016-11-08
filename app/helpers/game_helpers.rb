@@ -1,13 +1,14 @@
 helpers do
 
-  def current_time(timestamp)
+  private
+
+  def accurate_time(timestamp)
     cst = timestamp - 6.hours
     Time.at(cst).strftime("%B %e, %Y at %I:%M %p")
   end
 
   def game_duration(game)
-    binding.pry
-    (Time.now - game.created_at)
+    (game.updated_at - game.created_at).to_i
   end
 
   def game_winner(game, winner)

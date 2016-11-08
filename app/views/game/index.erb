@@ -1,4 +1,9 @@
 <h1>Game Results!</h1>
 <ul><% @games.each do |game| %>
-  <li>Game: <%= game.name %> | Winner: <%= game.winner %></li>
+  <li>Game: <%= game.name %> | Winner: <%= game.winner %> | Duration: <%= game.duration %> seconds</li>
+  <% end %>
 </ul>
+
+<form method="get" action="/game/new">
+ <input type="submit" value="Start new game" id="comment-button">
+</form>

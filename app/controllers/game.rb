@@ -35,9 +35,16 @@ end
 patch '/game/:id' do
   @game = Game.find(params[:id])
   game_winner(@game, params['winner'])
+  @game.start = accurate_time(@game.created_at)
   if @game.save #saves new game or returns false if unsuccessful
-    binding.pry
-    redirect '/game/:id' #redirect back to game index page
+    @game.finished = accurate_time(@game.updated_at)
+    @game.duration = game_duration(@game)
+    @game.save
+    if request.xhr?
+      @game.to_json
+    else
+      redirect "/game/#{@game.id}"
+    end
   else
     @error = "error saving winner"
     erb :'game/show' #show edit game view again(potentially displaying errors)

@@ -42,9 +42,15 @@
         </tr>
       </table>
       <ul>
-        <li> Game Started at: <%= current_time(@game.created_at) %> </li>
-        <li> Game Finished at: </li>
+        <li> Game Started at: <%= @game.start %> </li>
+        <li> Game Finished at: <%= @game.finished %> </li>
       </ul>
+
+      <div class="announcement">
+        <% if @game.winner %>
+          <h2> Congratulations, <%= @game.winner %>!!</h2>
+        <% end %>
+      </div>
     </div>
   </body>
 

@@ -20,20 +20,25 @@ $(document).ready(function() {
       };
     if (upCount === boardEnd) {
       winner = "winner=1"
+      var self = $(this)
        $.ajax({
           method: 'PATCH',
           url: $t.context.URL,
           data: winner
        }).done(function(response){
-        debugger
+          object = JSON.parse(response);
+          $('.announcement').append("<h2> Congratulations, " + object.winner + "!!</h2>")
        })
-
-      // AJAX request to send winner to Ruby, persist in database, then append winner on page in red
-      // alert("Player 1 wins!!")
-      // window.location.reload();
     } else if (downCount === boardEnd) {
-      alert("Player 2 wins!!")
-      window.location.reload();
+      winner = "winner=2"
+       $.ajax({
+          method: 'PATCH',
+          url: $t.context.URL,
+          data: winner
+       }).done(function(response){
+          object = JSON.parse(response);
+          $('.announcement').append("<h2> Congratulations, " + object.winner + "!!</h2>")
+       })
     };
   });
 
