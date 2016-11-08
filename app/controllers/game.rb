@@ -30,3 +30,17 @@ get '/game/:id' do
   @game = Game.find(params[:id])
   erb :'game/show'
 end
+
+
+patch '/game/:id' do
+  @game = Game.find(params[:id])
+  game_winner(@game, params['winner'])
+  if @game.save #saves new game or returns false if unsuccessful
+    binding.pry
+    redirect '/game/:id' #redirect back to game index page
+  else
+    @error = "error saving winner"
+    erb :'game/show' #show edit game view again(potentially displaying errors)
+  end
+end
+

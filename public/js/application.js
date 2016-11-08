@@ -2,6 +2,7 @@ var up = 38;
 var down = 40;
 var upCount = 0;
 var downCount = 0;
+var winner = undefined;
 
 $(document).ready(function() {
   $(document).on('keydown', function(event) {
@@ -18,8 +19,18 @@ $(document).ready(function() {
         downCount += 1;
       };
     if (upCount === boardEnd) {
-      alert("Player 1 wins!!")
-      window.location.reload();
+      winner = "winner=1"
+       $.ajax({
+          method: 'PATCH',
+          url: $t.context.URL,
+          data: winner
+       }).done(function(response){
+        debugger
+       })
+
+      // AJAX request to send winner to Ruby, persist in database, then append winner on page in red
+      // alert("Player 1 wins!!")
+      // window.location.reload();
     } else if (downCount === boardEnd) {
       alert("Player 2 wins!!")
       window.location.reload();

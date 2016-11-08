@@ -2,51 +2,50 @@
 <html>
 
   <head>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-  <script src="application.js"></script>
     <title>Racing!</title>
   </head>
 
   <body>
-
-  <h1> JS Ruby Racerrrr </h1>
-  <h3>Game Rules: </h3>
-  <ul>
-    <li><%= @game.players[0].username %> advances using the up arrow key</li>
-    <li><%= @game.players[1].username %> advances using the up arrow key</li>
-  </ul>
-    <table class="racer_table">
-      <tr id="player1_strip">
-      <th scope= "row"><h2><%= @game.players[0].username %></h2></th>
-        <td class="active1"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="end"></td>
-      </tr>
-      <tr id="player2_strip">
-      <th scope= "row"><h2><%= @game.players[1].username %></h2></th>
-        <td class="active2"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td class="end"></td>
-      </tr>
-    </table>
-    <h2> Game Started at: <%= binding.pry %> </h2>
-    <h2> Game Finished at: </h2>
-
+    <div id="game">
+      <h1> JS Ruby Racerrrr </h1>
+      <h3>Game Rules: </h3>
+      <ul>
+        <li><%= @game.players[0].username %> advances using the up arrow key</li>
+        <li><%= @game.players[1].username %> advances using the up arrow key</li>
+      </ul>
+      <table class="racer_table">
+        <tr id="player1_strip">
+        <th scope= "row"><h2><%= @game.players[0].username %></h2></th>
+          <td class="active1"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="end"></td>
+        </tr>
+        <tr id="player2_strip">
+        <th scope= "row"><h2><%= @game.players[1].username %></h2></th>
+          <td class="active2"></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="end"></td>
+        </tr>
+      </table>
+      <ul>
+        <li> Game Started at: <%= current_time(@game.created_at) %> </li>
+        <li> Game Finished at: </li>
+      </ul>
+    </div>
   </body>
 
 </html>
