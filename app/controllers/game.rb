@@ -3,7 +3,10 @@
 #     redirect '/'
 #   end
 # end
-
+get '/game' do
+  @games = Game.all
+  erb :'game/index'
+end
 
 get '/game/new' do
   erb :'game/new'
